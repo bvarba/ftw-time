@@ -138,7 +138,6 @@ class ProfileSettingsFormComponent extends Component {
                 className={avatarClasses}
                 renderSizes="(max-width: 767px) 96px, 240px"
                 user={transientUser}
-                disableProfileLink
               />
             ) : null;
 

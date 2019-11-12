@@ -750,17 +750,14 @@ exports[`InboxPage matches snapshot 2`] = `
 exports[`InboxPage matches snapshot 3`] = `
 <div>
   <div>
-    <a
+    <div
       className=""
-      href="/u/provider-user-id"
-      onClick={[Function]}
-      style={Object {}}
       title="provider-user-id display name"
     >
       <span>
         TT
       </span>
-    </a>
+    </div>
   </div>
   <a
     className=""
@@ -1166,17 +1163,14 @@ exports[`InboxPage matches snapshot 4`] = `
 exports[`InboxPage matches snapshot 5`] = `
 <div>
   <div>
-    <a
+    <div
       className=""
-      href="/u/customer-user-id"
-      onClick={[Function]}
-      style={Object {}}
       title="customer-user-id display name"
     >
       <span>
         TT
       </span>
-    </a>
+    </div>
   </div>
   <a
     className=""

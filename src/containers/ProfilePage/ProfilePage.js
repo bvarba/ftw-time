@@ -94,7 +94,7 @@ export class ProfilePageComponent extends Component {
 
     const asideContent = (
       <div className={css.asideContent}>
-        <AvatarLarge className={css.avatar} user={user} disableProfileLink />
+        <AvatarLarge className={css.avatar} user={user} />
         <h1 className={css.mobileHeading}>
           {displayName ? (
             <FormattedMessage id="ProfilePage.mobileHeading" values={{ name: displayName }} />

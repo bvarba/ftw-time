@@ -79,7 +79,7 @@ const TopbarDesktop = props => {
   const profileMenu = authenticatedOnClientSide ? (
     <Menu>
       <MenuLabel className={css.profileMenuLabel} isOpenClassName={css.profileMenuIsOpen}>
-        <Avatar className={css.avatar} user={currentUser} disableProfileLink />
+        <Avatar className={css.avatar} user={currentUser} />
       </MenuLabel>
       <MenuContent className={css.profileMenuContent}>
         <MenuItem key="EditListingPage">

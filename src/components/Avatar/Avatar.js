@@ -27,7 +27,7 @@ const AVATAR_IMAGE_VARIANTS = [
 ];
 
 export const AvatarComponent = props => {
-  const { rootClassName, className, user, renderSizes, disableProfileLink, intl } = props;
+  const { rootClassName, className, user, renderSizes, profileLinkEnabled, intl } = props;
   const classes = classNames(rootClassName || css.root, className);
 
   const userIsCurrentUser = user && user.type === 'currentUser';
@@ -59,7 +59,6 @@ export const AvatarComponent = props => {
     ? { name: 'ProfilePage', params: { id: avatarUser.id.uuid } }
     : { name: 'ProfileBasePage' };
   const hasProfileImage = avatarUser.profileImage && avatarUser.profileImage.id;
-  const profileLinkEnabled = !disableProfileLink;
 
   if (isBannedUser || isDeletedUser) {
     return (
@@ -113,7 +112,7 @@ AvatarComponent.defaultProps = {
   rootClassName: null,
   user: null,
   renderSizes: AVATAR_SIZES,
-  disableProfileLink: false,
+  profileLinkEnabled: false,
 };
 
 AvatarComponent.propTypes = {
@@ -122,7 +121,7 @@ AvatarComponent.propTypes = {
   user: oneOfType([propTypes.user, propTypes.currentUser]),
 
   renderSizes: string,
-  disableProfileLink: bool,
+  profileLinkEnabled: bool,
 
   // from injectIntl
   intl: intlShape.isRequired,

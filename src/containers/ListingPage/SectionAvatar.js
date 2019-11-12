@@ -8,10 +8,10 @@ const SectionAvatar = props => {
   return (
     <div className={css.sectionAvatar}>
       <NamedLink name="ListingPage" params={params} to={{ hash: '#host' }}>
-        <AvatarLarge user={user} className={css.avatarDesktop} disableProfileLink />
+        <AvatarLarge user={user} className={css.avatarDesktop} />
       </NamedLink>
       <NamedLink name="ListingPage" params={params} to={{ hash: '#host' }}>
-        <AvatarMedium user={user} className={css.avatarMobile} disableProfileLink />
+        <AvatarMedium user={user} className={css.avatarMobile} />
       </NamedLink>
     </div>
   );

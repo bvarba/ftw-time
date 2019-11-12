@@ -759,7 +759,7 @@ export class CheckoutPageComponent extends Component {
             />
           </div>
           <div className={classNames(css.avatarWrapper, css.avatarMobile)}>
-            <AvatarMedium user={currentAuthor} disableProfileLink />
+            <AvatarMedium user={currentAuthor} />
           </div>
           <div className={css.bookListingContainer}>
             <div className={css.heading}>
@@ -826,7 +826,7 @@ export class CheckoutPageComponent extends Component {
               />
             </div>
             <div className={css.avatarWrapper}>
-              <AvatarMedium user={currentAuthor} disableProfileLink />
+              <AvatarMedium user={currentAuthor} />
             </div>
             <div className={css.detailsHeadings}>
               <h2 className={css.detailsTitle}>{listingTitle}</h2>
