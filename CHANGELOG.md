@@ -15,7 +15,54 @@ https://github.com/sharetribe/flex-template-web/
 
 ---
 
-## Upcoming version 2019-XX-XX
+## Upcoming version 2020-XX-XX
+
+- [add] Add French and Spanish translations for yogatime
+  [#72](https://github.com/sharetribe/ftw-hourly/pull/72)
+- [fix] Fix bug in showing availability exceptions. This bug was introduced in v6.0.0.
+  [#71](https://github.com/sharetribe/ftw-hourly/pull/71)
+
+## [v6.0.0] 2019-12-20
+
+This is update from from [upstream](https://github.com/sharetribe/ftw-daily): v4.0.0
+
+- [change] Use Stripe's [Connect onboarding](https://stripe.com/docs/connect/connect-onboarding) for
+  adding and updating the identity information of the Stripe account.
+  - Before updating to this version you should check
+    [the related pull request](https://github.com/sharetribe/ftw-daily/pull/1234)
+  - Read more from documentation:
+    [How to handle provider onboarding and identity verification on FTW](https://www.sharetribe.com/docs/guides/provider-onboarding-and-identity-verification/)
+
+**Note:** In this update we have deprecated the old `PayoutDetailsForm` and `PayoutPreferencesPage`.
+Form now on Stripe will handle collecting the identity information required for verificating the
+Stripe account. On FTW we will only handle creating the new account and adding and updating
+information about bank account (e.g. IBAN number). If you want to keep using the custom form inside
+your application you need to make sure that you are collecting all the required information and
+enabling users to update the account so that it doesn't get restricted.
+
+- [fix] Add missing props to examples related to EditListingWizard
+  [#1247](https://github.com/sharetribe/ftw-daily/pull/1247)
+- [fix] Add missing props to tests related to EditListingWizard
+  [#1246](https://github.com/sharetribe/ftw-daily/pull/1246)
+- [fix] Update links to API Reference docs.
+  [#1231](https://github.com/sharetribe/ftw-daily/pull/1231)
+
+[v6.0.0]: https://github.com/sharetribe/ftw-hourly/compare/v5.1.0...v6.0.0
+
+## [v5.1.0] 2019-12-09
+
+- [change] Make it easier to reorder EditListingWizard tabs/panels.
+  [#1240](https://github.com/sharetribe/ftw-daily/pull/1240)
+- [change] In `PayoutDetailsForm` show states (US and AU) and provinces (CA) in dropdown instead of
+  input. Since November 18, 2019 Stripe has been validating these values (read more
+  https://support.stripe.com/questions/connect-address-validation).
+- [add] Add IconEdit [#1237](https://github.com/sharetribe/ftw-daily/pull/1237)
+
+  [v5.1.0]: https://github.com/sharetribe/ftw-hourly/compare/v5.0.3...v5.1.0
+
+## [v5.0.3] 2019-12-09
+
+Update from [upstream](https://github.com/sharetribe/ftw-daily): v3.6.1
 
 ## [v5.0.2] 2019-11-26
 
