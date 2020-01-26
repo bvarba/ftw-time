@@ -91,6 +91,15 @@ const TopbarDesktop = props => {
         <Avatar className={css.avatar} user={currentUser} disableProfileLink />
       </MenuLabel>
       <MenuContent className={css.profileMenuContent}>
+<<<<<<< HEAD
+      <MenuItem key="ManageListingsPage">
+          <NamedLink
+            className={classNames(css.yourListingsLink, currentPageClass('ManageListingsPage'))}	
+            name="ManageListingsPage"	
+          >	
+            <span className={css.menuItemBorder} />	
+            <FormattedMessage id="TopbarDesktop.yourListingsLink" />	
+=======
         <MenuItem key="ManageListingsPage">
           <NamedLink
             className={classNames(css.yourListingsLink, currentPageClass('ManageListingsPage'))}
@@ -98,6 +107,7 @@ const TopbarDesktop = props => {
           >
             <span className={css.menuItemBorder} />
             <FormattedMessage id="TopbarDesktop.yourListingsLink" />
+>>>>>>> 36fddd34c7271eafcda77331711251eab05a17c8
           </NamedLink>
         </MenuItem>
         <MenuItem key="ProfileSettingsPage">
@@ -144,6 +154,8 @@ const TopbarDesktop = props => {
     </NamedLink>
   );
 
+<<<<<<< HEAD
+=======
   const languageSelector = (
     <div className={css.languageSelectorWrapper}>
       <span className={css.languageSelector}>
@@ -165,6 +177,7 @@ const TopbarDesktop = props => {
     </div>
   );
 
+>>>>>>> 36fddd34c7271eafcda77331711251eab05a17c8
   return (
     <nav className={classes}>
       <NamedLink className={css.logoLink} name="LandingPage">
@@ -176,9 +189,15 @@ const TopbarDesktop = props => {
       </NamedLink>
       {search}
       <NamedLink className={css.createListingLink} name="NewListingPage">
+<<<<<<< HEAD
+        <span className={css.createListing}>	
+          <FormattedMessage id="TopbarDesktop.createListing" />	
+        </span>	
+=======
         <span className={css.createListing}>
           <FormattedMessage id="TopbarDesktop.createListing" />
         </span>
+>>>>>>> 36fddd34c7271eafcda77331711251eab05a17c8
       </NamedLink>
       {inboxLink}
       {profileMenu}
