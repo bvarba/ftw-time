@@ -41,17 +41,17 @@ export const keywordFilterConfig = {
 export const languageCountryConfig = {
   UK: 'EN',
   US: 'en',
-  IT: 'it',
-  // FR: "fr",
+  //IT: 'it',
+  FR: 'fr',
   // DE: "de",
-  ES: 'es',
+  //ES: 'es',
 };
 
 export const spokenlanguages = [
   { key: 'english', label: 'English', label_it: 'Inglese', label_es: 'Inglesa', code: 'en' },
-  { key: 'spanish', label: 'Spanish', label_it: 'Spagnolo', label_es: 'Española', code: 'es' },
-  { key: 'italian', label: 'Italian', label_it: 'Italiano', label_es: 'Italiano', code: 'it' },
-  // { key: 'french', label: 'French', code: 'fr' },
+  //{ key: 'spanish', label: 'Spanish', label_it: 'Spagnolo', label_es: 'Española', code: 'es' },
+  //{ key: 'italian', label: 'Italian', label_it: 'Italiano', label_es: 'Italiano', code: 'it' },
+  { key: 'french', label: 'French', label_it: 'French', label_es: 'French', code: 'fr' },
   // { key: 'german', label: 'German', code: 'de' },
   // { key: 'dutch', label: 'Dutch', code: 'nl' },
   // { key: 'chinese', label: 'Chinese', code: 'zh' },
