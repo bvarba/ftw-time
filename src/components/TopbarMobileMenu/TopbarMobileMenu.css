@@ -134,3 +134,29 @@
   margin-left: -24px;
   padding-left: 19px;
 }
+
+.languageSelector{
+  @apply --TopbarDesktop_label;
+}
+
+
+
+.languageSelectorWrapper {
+  /* @apply --TopbarDesktop_linkHover; */
+  @apply --marketplaceH4FontStyles;
+
+  flex-shrink: 0;
+  height: 90%;
+  color: var(--marketplaceColor);
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  /* &:hover {
+    color: var(--marketplaceColorDark);
+  } */
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+}

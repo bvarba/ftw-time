@@ -9,14 +9,12 @@ import classNames from 'classnames';
 import { ACCOUNT_SETTINGS_PAGES } from '../../routeConfiguration';
 import { propTypes } from '../../util/types';
 import { ensureCurrentUser } from '../../util/data';
-import {
-  AvatarLarge,
-  InlineTextButton,
-  NamedLink,
-  NotificationBadge,
-} from '../../components';
-
+import { AvatarLarge, InlineTextButton, NamedLink, NotificationBadge } from '../../components';
+import ReactFlagsSelect from 'react-flags-select';
 import css from './TopbarMobileMenu.css';
+import config from '../../config';
+import { spokenlanguages } from '../../marketplace-custom-config';
+import { getLanguageLabels, getLocaleFromUrl } from '../../util/data';
 
 const TopbarMobileMenu = props => {
   const {
@@ -27,9 +25,17 @@ const TopbarMobileMenu = props => {
     currentUser,
     notificationCount,
     onLogout,
+    defaultCountry,
+    handleLanguage,
   } = props;
 
   const user = ensureCurrentUser(currentUser);
+  const { languageCountryConfig } = config.custom;
+  const countries = Object.keys(languageCountryConfig).slice(1);
+
+  const pathname = window.location.pathname;
+  const currentLocale = getLocaleFromUrl(pathname, languageCountryConfig);
+  const customLabels = getLanguageLabels(languageCountryConfig, spokenlanguages, currentLocale);
 
   if (!isAuthenticated) {
     const signup = (
@@ -99,10 +105,10 @@ const TopbarMobileMenu = props => {
           {notificationCountBadge}
         </NamedLink>
         <NamedLink
-          className={classNames(css.navigationLink, currentPageClass('ManageListingsPage'))}	
-          name="ManageListingsPage"	
-        >	
-          <FormattedMessage id="TopbarMobileMenu.yourListingsLink" />	
+          className={classNames(css.navigationLink, currentPageClass('ManageListingsPage'))}
+          name="ManageListingsPage"
+        >
+          <FormattedMessage id="TopbarMobileMenu.yourListingsLink" />
         </NamedLink>
         <NamedLink
           className={classNames(css.navigationLink, currentPageClass('ProfileSettingsPage'))}
@@ -116,7 +122,27 @@ const TopbarMobileMenu = props => {
         >
           <FormattedMessage id="TopbarMobileMenu.accountSettingsLink" />
         </NamedLink>
+
+        <div className={css.languageSelectorWrapper}>
+          <span className={css.languageSelector}>
+            <ReactFlagsSelect
+              defaultCountry={defaultCountry}
+              countries={countries}
+              customLabels={customLabels}
+              showSelectedLabel={true}
+              showOptionLabel={true}
+              selectedSize={18}
+              optionsSize={14}
+              searchable={false}
+              onSelect={countryCode => {
+                const lang = languageCountryConfig[countryCode];
+                handleLanguage(lang);
+              }}
+            />
+          </span>
+        </div>
       </div>
+
       <div className={css.footer}>
         <NamedLink className={css.createNewListingLink} name="NewListingPage">
           <FormattedMessage id="TopbarMobileMenu.newListingLink" />
