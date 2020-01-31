@@ -58,6 +58,24 @@ const TopbarMobileMenu = props => {
     return (
       <div className={css.root}>
         <div className={css.content}>
+          <div className={css.languageSelectorWrapper}>
+            <span className={css.languageSelector}>
+              <ReactFlagsSelect
+                defaultCountry={defaultCountry}
+                countries={countries}
+                customLabels={customLabels}
+                showSelectedLabel={true}
+                showOptionLabel={true}
+                selectedSize={18}
+                optionsSize={14}
+                searchable={false}
+                onSelect={countryCode => {
+                  const lang = languageCountryConfig[countryCode];
+                  handleLanguage(lang);
+                }}
+              />
+            </span>
+          </div>
           <div className={css.authenticationGreeting}>
             <FormattedMessage
               id="TopbarMobileMenu.unauthorizedGreeting"
